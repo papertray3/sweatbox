@@ -1,0 +1,39 @@
+{
+  "name": "sweatbox",
+  "version": "0.0.1",
+  "description": "Web app/server to host workout routines",
+  "main": "index.js",
+  "scripts": {
+    "lerna": "lerna",
+    "ng": "ng",
+    "build:core": "lerna run --parallel --scope @sweatbox-core/* build",
+    "build:apps": "lerna run --parallel --scope @sweatbox/* build",
+    "build": "npm-run-all --serial build:core build:apps",
+    "build:test:core": "lerna run --parallel --scope @sweatbox-core/* build:test",
+    "build:test:apps": "lerna run --parallel --scope @sweatbox/* build:test",
+    "build:test": "npm-run-all --serial build:test:core build:test:apps",
+    "prestart": "npm run build",
+    "start": "lerna run --parallel start",
+    "prestart:test": "npm run build:test",
+    "start:test": "lerna run --parallel start:test",
+    "clean": "lerna --parallel run clean",
+    "preveryclean": "npm run clean",
+    "veryclean": "lerna clean",
+    "postinstall": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papertray3/sweatbox.git"
+  },
+  "author": "Sean Thatcher <papertray3@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/papertray3/sweatbox/issues"
+  },
+  "homepage": "https://github.com/papertray3/sweatbox#readme",
+  "devDependencies": {
+    "@angular/cli": "^6.1.1",
+    "lerna": "^3.0.0-rc.0",
+    "npm-run-all": "^4.1.3"
+  }
+}

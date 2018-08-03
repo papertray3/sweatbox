@@ -1,0 +1,19 @@
+{
+  "name": "@sweatbox-core/common",
+  "version": "0.0.1",
+  "description": "Common model objects for sweatbox",
+  "main": "lib/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "tsc",
+    "build:test": "tsc",
+    "clean": "rimraf lib/"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.5.3",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.9.2"
+  }
+}
