@@ -1,6 +1,6 @@
 {
   "name": "@sweatbox-core/common",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Common model objects for sweatbox",
   "main": "lib/index.js",
   "scripts": {
