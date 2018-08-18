@@ -12,8 +12,17 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/nconf": "0.0.37",
     "@types/node": "^10.5.3",
     "rimraf": "^2.6.2",
     "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@types/image-size": "0.0.29",
+    "@types/mime": "^2.0.0",
+    "image-size": "^0.6.3",
+    "mime": "^2.3.1",
+    "nconf": "^0.10.0",
+    "rxjs": "^6.2.2"
   }
 }

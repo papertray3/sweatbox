@@ -1,0 +1,35 @@
+{
+  "name": "@sweatbox/packager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "collect:common": "copyfiles -u 2 \"../common/lib/**/*\" \"./app/common\"",
+    "collect:client": "copyfiles -u 3 \"../client5/dist/**/*\" \"./app\"",
+    "collect:server": "copyfiles -u 3 \"../server/dist/**/*\" \"./app\"",
+    "prep-pack:common": "prep-pack -k dependencies,main ../common/package.json ./app/common",
+    "prep-pack:app": "prep-pack -k dependencies,description,author -s 'main=./server/app.js' -s 'name=Sweatbox' -s 'dependencies.@sweatbox-core/common=file:./common' ../server/package.json ./app",
+    "prep-pack": "npm-run-all --parallel prep-pack:*",
+    "collect": "npm-run-all --parallel collect:*",
+    "install-app-deps": "electron-builder install-app-deps",
+    "prepackage": "npm-run-all --serial clean collect prep-pack install-app-deps",
+    "pack": "build --dir",
+    "package": "build",
+    "clean": "rimraf ./app ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "electron-builder": "^20.28.1",
+    "npm-run-all": "^4.1.3",
+    "prep-pack": "git+https://github.ibm.com/seanthat/prep-pack",
+    "rimraf": "^2.6.2"
+  },
+  "build": {
+    "appId": "com.sweatbox.app",
+    "productName": "Sweatbox"
+  }
+}

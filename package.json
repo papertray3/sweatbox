@@ -16,10 +16,12 @@
     "start": "lerna run --parallel start",
     "prestart:test": "npm run build:test",
     "start:test": "lerna run --parallel start:test",
-    "clean": "lerna --parallel run clean",
+    "clean": "lerna run --parallel clean",
     "preveryclean": "npm run clean",
     "veryclean": "lerna clean",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "prepackage": "npm run build",
+    "package": "lerna run package"
   },
   "repository": {
     "type": "git",
