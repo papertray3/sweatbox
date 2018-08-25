@@ -1,7 +1,8 @@
 {
   "name": "@sweatbox/packager",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server for sweatbox app",
+  "homepage": "https://github.com/papertray3/sweatbox",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,14 +20,18 @@
     "clean": "rimraf ./app ./dist"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Sean Thatcher <papertray3@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "copyfiles": "^2.0.0",
     "electron-builder": "^20.28.1",
     "npm-run-all": "^4.1.3",
     "prep-pack": "git+ssh://git@github.ibm.com/seanthat/prep-pack",
     "rimraf": "^2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/papertray3/sweatbox"
   },
   "build": {
     "appId": "com.sweatbox.app",
