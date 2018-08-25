@@ -38,7 +38,6 @@
     "productName": "Sweatbox",
     "linux": {
       "target": [
-        "deb",
         "tar.gz"
       ]
     }
