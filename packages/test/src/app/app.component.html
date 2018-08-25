@@ -1,0 +1,17 @@
+<input [matKeyboard]="''">
+
+<app-media [media]="media" (videoEnded)="nextFromVideo()">
+  <div class="media-buttons">
+    <div class="media-button" [hidden]="!media.user" [style.background-image]="'url(' + media.profilePic + ')'"></div>
+    <div class="media-button">
+      <button mat-icon-button (click)="manualNext()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>
+    <div class="media-button" (click)="removeMedia()">
+      <button mat-icon-button>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+  </div>
+</app-media>
