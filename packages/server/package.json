@@ -16,7 +16,7 @@
     "start:test": "NODE_ENV=test node ./dist/server/app.js --rootDir ../client/dist/public",
     "clean": "rimraf dist/",
     "genversion": "genversion --es6 src/version.ts",
-    "postinstall": "npm-run-all --parallel genversion rebuild"
+    "postinstall": "npm-run-all --parallel genversion"
   },
   "author": "",
   "license": "MIT",
