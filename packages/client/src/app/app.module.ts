@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgxElectronModule } from 'ngx-electron';
 
@@ -16,7 +17,9 @@ import { MediaComponent } from './media/media.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgxElectronModule
+    NgxElectronModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

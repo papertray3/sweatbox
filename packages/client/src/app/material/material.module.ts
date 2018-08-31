@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+
+import { MatKeyboardModule } from '@ngx-material-keyboard/core';
 
 @NgModule({
   imports: [
@@ -14,15 +16,22 @@ import {MatButtonModule} from '@angular/material/button';
     MatGridListModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatKeyboardModule
   ],
   exports: [
     MatCardModule,
     MatGridListModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatKeyboardModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [MatIconRegistry]
 })
-export class MaterialModule { }
+export class MaterialModule { 
+  constructor(private _registry : MatIconRegistry) {
+    this._registry.registerFontClassAlias('weathericons', 'wi');
+  }
+}

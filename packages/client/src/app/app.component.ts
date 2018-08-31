@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   bounds: Electron.Rectangle;
   rowHeight: number;
 
+  weatherIcon = "wi-day-sunny";
+
   @Output()
   media : MediaInfo;
 
@@ -34,7 +36,7 @@ export class AppComponent implements OnInit {
     this._media.nextMedia.subscribe((m : MediaInfo) => {
       this.media = m;
 
-      if (this.media.mime.startsWith('image')) {
+      if (this.media.mime.startsWith('image') && this._delayTime > 0) {
         this._timer = setTimeout(() => {
           this.next()}, this._delayTime);
       } 

@@ -62,30 +62,14 @@ export class MediaComponent implements OnInit {
     let h = info.height;
     let a = w/h;
 
-    if (a == 1) {
-      if (cW > cH) {
-        h = cH;
-        w = h;
-      } else {
-        h = cW;
-        w = h;
-      }
+    //bias to width...don't overrun width but height we can
 
-    } else if (w > h) {
+    if (a >= 1) {
       w = cW;
-      h = w/a;
-      if (h < cH) {
-        // try to stretch it by 10%?
-        h = h*1.1;
-        w = h*a;
-      }
+      h = cW;
     } else {
-      h = cH;
-      w = h*a;
-      if (w < cW) {
-        w = w*1.1;
-        h = w/a;
-      }
+      w = cH*a > cW ? cW : cH*a;
+      h = w/a;
     }
 
     this.imageWidth = w;

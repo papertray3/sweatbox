@@ -1,4 +1,13 @@
-<app-media [media]="media" (videoEnded)="nextFromVideo()">
+<div id="content-container">
+{{ media.path }}
+<br />
+<mat-icon fontSet="wi" [fontIcon]="weatherIcon"></mat-icon>
+<br />
+
+<input name="icon" [(ngModel)]="weatherIcon">
+</div>
+
+<app-media id="media-container" [media]="media" (videoEnded)="nextFromVideo()">
   <div class="media-buttons">
     <div class="media-button" [hidden]="!media.user" [style.background-image]="'url(' + media.profilePic + ')'"></div>
     <div class="media-button">
